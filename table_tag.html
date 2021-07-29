@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>표 태그 공부</title>
+</head>
+<body>
+  <table border="1"> <!--border:테두리-->
+    <tr>
+      <th>제목 셀</th>
+      <td>1행 2열</td>
+      <td>1행 3열</td>
+    </tr>
+    <tr>
+      <th>제목 셀</th>
+      <td>2행 2열</td>
+      <td>2행 3열</td>
+    </tr>
+  </table>
+  <!--표 제목 붙이는 예제 caption-->
+  <table border="1">
+    <caption>
+      <strong>제목을 굵게 표시</strong>
+      <p>작은 부가 설명을 붙일 수 있다</p>
+    </caption>
+    <tr>
+      <td>표1</td>
+      <td>표2공-------------------------------------------백</td>
+    </tr>
+    <tr>
+      <th>표 굵게1</th>
+      <td>표3 공-------------------------------------------백</td>
+    </tr>
+  </table>
+
+  <!--표 제목 예제 figcaption-->
+  <figure>
+    <figcaption>
+      <p>대상을 하나로 감싸서 표시하는 태그</p>
+    </figcaption>
+    <table border="2">
+      <tr>
+        <td>표1 공------------------백</td>
+        <td>표2 공------------------백</td>
+      </tr>
+    </table>
+  </figure>
+
+  <!--aria-describedby 속성 예제 : 표에 대한 설명 제공 속성-->
+<p id="summary">다음 표는 내가 속성을 알기 위해 아무 말이나 적어서 무슨 표인지 설명하는 글이다</p>
+  <table border="1" aria-describedby="summary">
+    <caption>제목입니다</caption>
+    <tr>
+      <td>표1공-----------백</td>
+      <td>표2공-----------백</td>
+    </tr>
+  </table>
+
+  <!--표 구조를 알기 위한 예제-->
+  <table border="1">
+    <caption>표 구조 thead / tbody / tfoot</caption>
+    <thead>
+      <tr>
+        <td>머리 1</td>
+        <td>머리 2</td>
+        <td>머리 3</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>바디 1</td>
+        <td>바디 2</td>
+        <td>바디 3</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>요약 1</td>
+        <td>요약 2</td>
+        <td>요약 3</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <!--col / colgroup 태그 이해 예제-->
+  <table border="1">
+    <caption>colgroup 연습</caption>
+    <colgroup>
+    <col>  <!--별 다른 스타일 지정 x / 열 개수 맞추기 위한 태그-->
+    <col span="2" style="background-color: aqua;"> <!--2,3번째 열에 배경-->
+    <col style="background-color: burlywood;"> <!--4번째 열에 배경-->
+    </colgroup>
+    <tr>
+      <td>공백</td>
+      <td>공백</td>
+      <td>공백</td>
+      <td>공백</td>
+    </tr>
+    <tr>
+      <td>공백</td>
+      <td>공백</td>
+      <td>공백</td>
+      <td>공백</td>
+    </tr>
+  </table>
+</body>
+</html>

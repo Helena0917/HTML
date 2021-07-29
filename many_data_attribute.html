@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>여러 데이터 나열해 보여주기</title>
+</head>
+<body>
+  <!--드롭다운 목록 기본형-->
+  <label class="reg" for="class">학과</label>
+  <select id="class">
+    <option>건축공학과</option>
+    <option>기계공학과</option>
+    <option>컴퓨터공학과</option>
+  </select>
+
+  <br><br><br>
+
+  <!--드롭다운 목록 심화형-->
+  <label class="reg" for="class">학과</label>
+  <select size="5" id="class" multiple> <!--5개씩 보이고(size), 여러 옵션 선택 가능(multiple)-->
+    <option value="a">건축공학과</option>
+    <option value="b">기계공학과</option>
+    <option value="c">컴퓨터공학과</option>
+    <option value="d" selected>전기전자공학과</option> <!--selected:기본 선택 옵션-->
+    <option value="e">화학공학과</option>
+  </select>
+
+  <br><br><br>
+
+  <!--optgroup 태그-옵션끼리 묶기-->
+  <label class="reg" for="class">학과</label>
+  <select id="class">
+    <optgroup label="공과대학">
+      <option value="a">건축공학과</option>
+      <option value="b">기계공학과</option>
+      <option value="c">컴퓨터공학과</option>
+      <option value="d">전기전자공학과</option>
+      <option value="e">화학공학과</option>
+    </optgroup>
+    <optgroup label="인문대학">
+      <option value="a">사학과</option>
+      <option value="b">어문학부</option>
+      <option value="c">철학</option>
+    </optgroup>
+  </select>
+
+  <br><br><br>
+
+  <!--datalist,option 태그-->
+  <input type="text" id="interest" list="choices"> <!--데이터 목록 중 값 선택-->
+  <datalist id="choices">
+    <option value="a" label="문법"></option>
+    <option value="b" label="어휘"></option>
+    <option value="c" label="회화"></option>
+    <option value="d" label="리스닝"></option>
+    <option value="e" label="뉴스청취"></option>
+  </datalist>
+
+  <br><br><br>
+
+  <!--textarea 태그 - 여러 줄 입력하는 텍스트 영역 만들기-->
+  <!--cols:가로 / rows:세로 ..단위 지정-->
+  <textarea name="intro" cols="60" rows="5">
+    자기의 일을 스스로 결정하지 않으면 안 돼.
+    [영화, 하울의 움직이는 성 대사]
+
+    처음부터 완벽하기를 기대하면 안 돼.
+    [영화, 귀를 기울이면 대사]
+  </textarea>
+
+  <br><br><br>
+
+  <!--버튼 태그 사용 및 꾸미기-->
+  <!--마우스 올렸을 때, 선택한 효과 생김-->
+  <form>
+    <button type="submit" class="subm">
+      <img src="image/hey.png" alt="버튼 이미지 넣기">전송하기
+    </button>
+  </form>
+
+  <br><br><br>
+
+  <!--output 태그 사용-->
+  <!--계산 결과를 브라우저에게 인식-->
+  <form oninput="result.value=parseInt(num1.value)+parseInt(num2.value)">
+   <input type="number" name="num1" value="0">
+   +<input type="number" name="num2" value="0">
+   =<output name="result" for="num"></output>
+  </form>
+
+  <br><br><br>
+
+  <!--progress 태그 사용-->
+  <!--부동 소수점으로 표현-->
+  <ul>
+    <li>
+      <label>10초 남음</label>
+      <!--전체 60초 중 50초 진행-->
+      <progress value="50" max="60"></progress>
+    </li>
+    <li>
+      <label>진행률 30%</label>
+      <!--전체 100중 30만큼 진행-->
+      <progress value="30" max="100"></progress>
+    </li>
+  </ul>
+
+  <!--meter 태그 예제-->
+  <!--min:최소 / max:최대 / value:범위 내 차지하는 값 / low: "낮다"할 정도의 값 / high: "높다"할 정도의 값 / optimum: "적당하다"할 정도의 값-->
+  <!--optimum 값 > high 값 = value값 클수록 좋음-->
+  <!--optimum 값 < low 값 = value값 작을수록 좋음-->
+  <ul>
+    <li>
+      <label>점유율 0.8</label>
+      <!--전체 크기 1을 기준으로 0.8만큼 차지-->
+      <meter value="0.8"></meter>
+    </li>
+    <li>
+      <label>사용량 64%</label>
+      <!--전체 100 중에서 64만큼 차지-->
+      <meter min="0" max="100" value="64"></meter>
+    </li>
+    <li>
+      <label>트래픽 초과</label>
+      <!--전체 크기는 1024~10240인데 높다고 설정한 8192보다 현재 값 9216이 더 큼-->
+      <meter min="1024" max="10240" low="2048" high="8192" value="9216"></meter>
+    </li>
+    <li>
+      <label>적절한 트래픽</label>
+      <!--전체 1 중에서 현재 0.5를 차지하고 있으며 적정도를 0.8로 설정-->
+      <meter value="0.5" optimum="0.8"></meter>
+    </li>
+  </ul>
+</body>
+</html>

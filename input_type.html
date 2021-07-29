@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input type 속성값 공부</title>
+</head>
+<body>
+  <!--히든 필드-->
+  <input type="hidden" id="agreement" name="agreement" value="Y">
+  <!--ex.아이디 중복 체크 / name 속성 이용 - 히든 필드의 이름 지정 - 그에 대한 값은 value 속성 이용해 서버 넘김-->
+
+  <!--텍스트 필드-->
+  <input type="text" id="user_id" size="10">
+
+  <!--비밀번호 필드-->
+  <input type="password" id="user_pw" size="10">
+
+  <!--분화된 텍스트 필드-->
+  <input type="search" id="search"> <!--검색 상자 만들기-->
+  <input type="url" id="url"> <!--URL 입력란 만들기-->
+  <input type="email" id="email"> <!--이메일 주소 입력란 만들기-->
+  <input type="tel" id="tel"> <!--전화번호 입력란 만들기-->
+
+  <!--숫자 입력 필드-->
+  <b>주문 개수 :</b> <input type="number" min="1" max="5" value="1">개
+
+  <!--슬라이드 막대로 숫자 지정 필드-->
+  <b>주문 개수 :</b> <input type="range" min="1" max="5" value="1">개
+
+  <!--라디오 / 체크박스 속성-->
+  <fieldset>
+    <legend>신청 과목</legend>
+    <p>이 달에 신청할 과목을 선택하시오 (1과목만 가능)</p>
+    <label><input type="radio" name="subject" value="speaking">회화</label> <!--value값은 필수-->
+    <label><input type="radio" name="subject" value="grammar">문법</label>
+    <label><input type="radio" name="subject" value="writing">작문</label>
+  </fieldset>
+  <fieldset>
+    <legend>메일링</legend>
+    <p>메일로 받고 싶은 뉴스 주제를 선택해주세요(복수 선택 가능)</p>
+    <label><input type="checkbox" name="mailing1" value="news">해외 단신</label>
+    <label><input type="checkbox" name="mailing2" value="dialog">5분 회화</label>
+  </fieldset>
+
+  <!--색상 선택 상자 표시-->
+  <p>올해 과 티(T)를 만들려고 합니다. 원하는 색상을 추천해주세요.</p>
+  <label>선호색상 <input type="color" value="#00ff00"></label>
+
+  <!--날짜 표시 필드-->
+  <label><input type="date" id="date"></label> <!--yyyy-mm-dd 형식 / 연도.월.일-->
+  <label><input type="month" id="month"></label> <!--yyyy-mm 형식 / 연도.월-->
+  <label><input type="week" id="week"></label> <!--yyyy-w00 형식 / 연도.몇 주-->
+
+  <!--시간 지정 필드-->
+  <h3>원하는 대관시간을 선택하세요(오늘)</h3>
+  <label>시작 시간<input type="time" value="09:00" id="start"></label>
+  <label>종료 시간<input type="time" value="18:00" id="end"></label>
+
+  <h3>대관시간을 선택하세요(다른날짜)</h3>
+  <label><input type="datetime-local" value="2021-02-08T09:00" id="start"></label>
+  <label><input type="datetime-local" value="2021-02-08T18:00" id="end"></label>
+
+  <!--서버 전송,리셋 버튼 넣기-->
+  <form action="register.php" method="POST"> <!--submit이 서버로 전송해줌-->
+    <labe>메일 주소 <input type="text"></label>
+    <input type="submit" value="제출">
+    <input type="reset" value="다시입력">
+  </form>
+
+  <!--이미지 버튼 넣기-->
+  <label>아이디 <input type="text" size="15"></label>
+  <label>비밀번호<input type="password" size="15"></label>
+  <input type="image" id="butt" src="image/hey.png" alt="login">
+
+  <!--버튼 넣기-->
+  <input type="button" value="새 탭 열기" onclick="window.open()"> <!--자체 기능 없음/스크립트 함수 사용-->
+
+  <!--파일 첨부-->
+  <label>첨부 파일<input type="file"></label> <!--파일 첨부 버튼에 표시되는 내용은 웹브라우저에 따라 다름-->
+</body>
+</html>

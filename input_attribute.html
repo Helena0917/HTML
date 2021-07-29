@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input 태크 속성들 공부</title>
+</head>
+<body>
+  <!--입력 커서 표시-->
+  <label class="reg" for="uname">이름</label>
+  <input type="text" id="uname" autofocus>
+
+  <br><br><br>
+
+  <!--힌트 표시-->
+  <label class="reg" for="uid">학번</label>
+  <input type="text" id="uid" placeholder="하이픈없이 입력">
+
+  <br><br><br>
+
+  <!--읽기 전용 필드-->
+  <label class="reg" for="subj">영어회화(초급)</label>
+  <input type="text" id="subj" value="오전 9:00~11:00" readonly>
+
+  <br><br><br>
+
+  <!--필수 입력 사항 지정-->
+  <label class="reg" for="uname">이름</label>
+  <input type="text" id="uname" autofocus required>
+
+  <br><br><br>
+
+  <!--최솟값/최댓값/간격 설정-->
+  <label class="reg" for="group">단체주문</label>
+  <input type="number" id="group" value="10" min="10" max="100" step="10">
+
+  <br><br><br>
+
+  <!--길이, 최소 길이, 최대 길이 속성-->
+  <label>아이디:<input type="text" id="user_id" size="10" minlength="4" maxlength="15"></label>
+  <small style="color: red;">4~15자리 이내의 영문과 숫자</small>
+</body>
+</html>
